@@ -1,0 +1,115 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "BlogRails",
+    "dateExported": "2023-06-20T07:20:03.078Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "c5aa4aa5-f0b8-497d-87c4-806320e6938a",
+            "colId": "51a6c879-d82f-48bf-84cd-072d5687ca95",
+            "containerId": "",
+            "name": "Get all posts",
+            "url": "http://127.0.0.1:3000/posts",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-06-20T06:53:52.273Z",
+            "modified": "2023-06-20T06:54:15.765Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6d10db9c-ed22-44ec-9941-89697cf68fc8",
+            "colId": "51a6c879-d82f-48bf-84cd-072d5687ca95",
+            "containerId": "",
+            "name": "Get single post\\",
+            "url": "http://127.0.0.1:3000/posts/25",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-06-20T06:54:32.183Z",
+            "modified": "2023-06-20T06:55:02.740Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "46fa3ce9-c923-42a1-b415-c05c3df79a2b",
+            "colId": "51a6c879-d82f-48bf-84cd-072d5687ca95",
+            "containerId": "",
+            "name": "Update Post",
+            "url": "http://127.0.0.1:3000/posts/27",
+            "method": "PATCH",
+            "sortNum": 20000,
+            "created": "2023-06-20T06:55:28.540Z",
+            "modified": "2023-06-20T07:09:16.967Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "articletitle",
+                        "value": "Hello Moringa"
+                    },
+                    {
+                        "name": "content",
+                        "value": "hmjshl  dgvbse uiisguvla uiohlasugael "
+                    },
+                    {
+                        "name": "author",
+                        "value": "Michael"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "9d71687d-c6a0-4f0e-9c47-66bbcfc69d5a",
+            "colId": "51a6c879-d82f-48bf-84cd-072d5687ca95",
+            "containerId": "",
+            "name": "Add post",
+            "url": "http://127.0.0.1:3000/posts",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-06-20T07:08:21.175Z",
+            "modified": "2023-06-20T07:08:21.175Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "articletitle",
+                        "value": "Hello"
+                    },
+                    {
+                        "name": "content",
+                        "value": "hmjshl  dgvbse uiisguvla uiohlasugael "
+                    },
+                    {
+                        "name": "author",
+                        "value": "kelvin"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "ae5a4d8b-dc41-4d19-b4c0-391cb160c528",
+            "colId": "51a6c879-d82f-48bf-84cd-072d5687ca95",
+            "containerId": "",
+            "name": "Delete post",
+            "url": "http://127.0.0.1:3000/posts/25",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2023-06-20T07:14:09.622Z",
+            "modified": "2023-06-20T07:14:47.702Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
