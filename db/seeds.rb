@@ -4,4 +4,6 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+20.times do 
+  Post.create(title: Faker::Book.title, content: Faker::Lorem.sentence, username: Faker::Book.author)
+end
