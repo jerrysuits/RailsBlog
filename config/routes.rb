@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :posts, only: [:index, :show,:create,:update,:destroy]
 
-  # get "/singlepost/:id", to:"posts#getSinglePost"
+  patch "/posts/archive/:id", to:"posts#archive"
 
   # get "/post", to:"posts#index"
   # get "/post/:id", to:"post#show"
