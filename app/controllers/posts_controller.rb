@@ -1,7 +1,14 @@
 class PostsController < ApplicationController
+    skip_before_action :authorize, only: [:index, :show]
     # All posts
     def index
         posts = Post.all
+        render json: posts.as_json(include: :user)
+    end
+
+    # Get approved post
+    def approvedposts
+        posts = Post.where(is_approved: true)
         render json: posts.as_json(include: :user)
     end
 
@@ -20,7 +27,7 @@ class PostsController < ApplicationController
 
     # Add new post
     def create
-        post = Post.create(title: params[:articletitle],content: params[:content], user_id: params[:user_id] )
+        post = @current_user.posts.create(title: params[:articletitle],content: params[:content] )
         if post.valid?
             # post = Post.create(title: params[:articletitle],content: params[:content], username: params[:author] )
             # render json: post, status: :created
@@ -59,6 +66,29 @@ class PostsController < ApplicationController
             render json: {error: "Post not found"}, status: :not_found
         end
     end
+
+
+         # Approve post / should be performed by admins only
+         def approve
+            current_user=User.find_by(id: session[:user_id])
+            if current_user.is_admin==true
+                post = Post.find_by(id: params[:id]) #value or null
+    
+                if post
+                    post.update(is_approved: true)
+                    render json: {success: "Post Approved... Can be seen by users"}, status: :created
+        
+                else
+                    render json: {error: "Post not found"}, status: :not_found
+                end
+            else
+                render json: {error: "Admins can only perform such operation"}, status: :not_found
+
+               
+            end
+            
+        end
+    
 
     # Delete post
     def destroy
