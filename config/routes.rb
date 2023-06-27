@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   resources :posts, only: [:index, :show,:create,:update,:destroy]
 
   patch "/posts/archive/:id", to:"posts#archive"

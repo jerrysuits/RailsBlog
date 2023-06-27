@@ -1,35 +1,36 @@
-class PostsController < ApplicationController
-    # All posts
-    def index
-        posts = Post.all
-        render json: posts.as_json(include: :user)
+class UsersController < ApplicationController
+     # All users
+     def index
+        users = User.all
+        render json: users
+        #  {users: users}
     end
 
-    # Get Single Post
+    # Get Single User
     def show
-        post = Post.find_by(id: params[:id]) #value or null
-        if post
-            render json: post
+        user = User.find_by(id: params[:id]) #value or null
+        if user
+            render json: user
             
         else
-            render json: {error: "Post not found"}, status: :not_found
+            render json: {error: "User not found"}, status: :not_found
 
         end
     
     end 
 
-    # Add new post
+    # Add new user
     def create
-        post = Post.create(title: params[:articletitle],content: params[:content], user_id: params[:user_id] )
-        if post.valid?
-            # post = Post.create(title: params[:articletitle],content: params[:content], username: params[:author] )
-            # render json: post, status: :created
-            render json: {success: "Post added successfully"}, status: :created
+        user = User.create(username: params[:username],email: params[:email], profile_image: params[:profile_image], password: params[:password] )
+        if user.valid?
+            render json: {success: "User created successfully"}, status: :created
 
         else
-            render json: {error: post.errors.full_messages}, status: :unprocessable_entity
+            render json: {error: user.errors.full_messages}, status: :unprocessable_entity
 
         end
+ 
+
 
     end
 
@@ -38,7 +39,7 @@ class PostsController < ApplicationController
         post = Post.find_by(id: params[:id]) #value or null
 
         if post
-            post.update(title: params[:articletitle],content: params[:content] )
+            post.update(title: params[:articletitle],content: params[:content], username: params[:author] )
             # render json: post, status: :created
             render json: {success: "Post updated successfully"}, status: :created
 
@@ -73,5 +74,4 @@ class PostsController < ApplicationController
         end
     end
     
-
 end
