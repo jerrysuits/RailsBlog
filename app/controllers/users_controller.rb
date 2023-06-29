@@ -34,6 +34,7 @@ class UsersController < ApplicationController
 
     # Add new user
     def create
+        # is_admin: true, 
         user = User.create(username: params[:username],email: params[:email], profile_image: params[:profile_image], password: params[:password] )
         if user.valid?
             render json: {success: "User created successfully"}, status: :created

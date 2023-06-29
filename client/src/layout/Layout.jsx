@@ -8,7 +8,10 @@ export default function Layout() {
     <div>
         <Navbar/>
        
-         <Outlet />
+       <div className='container mx-auto min-h-[85vh] bg-gray-100 p-5'>
+        <Outlet />
+       </div>
+         
 
         <Footer/>
         

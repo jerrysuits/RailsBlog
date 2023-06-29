@@ -3,7 +3,7 @@ class PostsController < ApplicationController
     # All posts
     def index
         posts = Post.all
-        render json: posts.as_json(include: :user)
+        render json: posts.as_json(include: :user,except: [:password_digest])
     end
 
     # Get approved post

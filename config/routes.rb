@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
-  post "/login", to:"session#login"
-  delete "/logout", to:"session#logout"
+  post "/api/login", to:"session#login"
+  delete "/api/logout", to:"session#logout"
 
   resources :users
-  get "/current_user", to:"users#loggedin_user"
+  get "/api/current_user", to:"users#loggedin_user"
 
   
   resources :posts, only: [:index, :show,:create,:update,:destroy]
-  get "/approvedposts", to:"posts#approvedposts"
+  get "/api/approvedposts", to:"posts#approvedposts"
 
-  patch "/posts/archive/:id", to:"posts#archive"
-  patch "/posts/approve/:id", to:"posts#approve"
+  patch "/api/posts/archive/:id", to:"posts#archive"
+  patch "/api/posts/approve/:id", to:"posts#approve"
 
 
   # get "/post", to:"posts#index"
