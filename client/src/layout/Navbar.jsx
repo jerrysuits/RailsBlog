@@ -5,7 +5,7 @@ import { AuthContext } from '../context/AuthContext'
 export default function Navbar() 
 {
   const {current_user, logout} = useContext(AuthContext)
-  console.log("User from Navbar", current_user)
+  // console.log("User from Navbar", current_user)
 
   return (
  
