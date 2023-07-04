@@ -14,6 +14,7 @@ export default function AuthProvider({children})
         fetch("https://teest-asv8.onrender.com/api/login", {
             method: "POST",
             headers: {"Content-Type":"application/json"},
+            credentials: 'include',
             body: JSON.stringify({username, password})
         })
         .then((res)=>res.json())
@@ -66,8 +67,12 @@ export default function AuthProvider({children})
     }
 
     useEffect(()=>{
-        console.log("Error")
-        fetch("https://teest-asv8.onrender.com/api/current_user")
+        console.log("current user")
+        fetch("https://teest-asv8.onrender.com/api/current_user",{
+          method: "GET",
+          credentials: 'include'
+        }
+        )
         .then((res)=>res.json())
         .then((response)=>{
             setCurrentUser(response)
