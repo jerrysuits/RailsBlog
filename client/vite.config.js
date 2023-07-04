@@ -6,14 +6,14 @@ export default defineConfig({
   plugins: [react()],
  
   
-    server: {
-      proxy: {
-        '/api': {
-          target: 'https://teest-asv8.onrender.com',
-          changeOrigin: false,   
-        }
-      },  
-     }
+    // server: {
+    //   proxy: {
+    //     '/api': {
+    //       target: 'https://teest-asv8.onrender.com',
+    //       changeOrigin: false,   
+    //     }
+    //   },  
+    //  }
  
   
   
