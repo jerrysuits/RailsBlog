@@ -13,7 +13,7 @@ export default function PostProvider({children})
 
      // Approve posts by admins
      const approvePost = (id) =>{
-        fetch(`https://teest-asv8.onrender.com/api/posts/approve/${id}`, {
+        fetch(`/api/posts/approve/${id}`, {
             method: "PATCH"
         })
         .then((res)=>res.json())
@@ -50,7 +50,7 @@ export default function PostProvider({children})
 
 // Delete Post
     const deletePost = (id) =>{
-        fetch(`https://teest-asv8.onrender.com/api/posts/${id}`, {
+        fetch(`/api/posts/${id}`, {
          method: "DELETE",
                 })
         .then((res)=>res.json())
@@ -78,7 +78,7 @@ export default function PostProvider({children})
      }
     // fetching posts
     useEffect(()=>{
-        fetch("https://teest-asv8.onrender.com/api/posts")
+        fetch("/api/posts")
         .then((res)=>res.json())
         .then((response)=>{
             setPosts(response)
