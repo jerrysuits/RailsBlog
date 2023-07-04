@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  # React routes
-  # get "*path", to: "react#index", constraints: ->(req) { !req.xhr? && req.format.html? }
   post "/api/login", to:"session#login"
   delete "/api/logout", to:"session#logout"
 
@@ -16,7 +14,11 @@ Rails.application.routes.draw do
   patch "/api/posts/approve/:id", to:"posts#approve"
 
 
-  get "*path", to:"react#index"
+  # get "/post", to:"posts#index"
+  # get "/post/:id", to:"post#show"
+  # post "/post", to:"post#create"
+  # delete "/post/:id", to:"post#destroy"
+  # patch "/post/:id", to:"post#update"
 
-
+  get "*parts", to:"react#index"
 end
