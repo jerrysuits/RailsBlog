@@ -10,8 +10,9 @@ default: &default
   timeout: 5000
 
 development:
-  <<: *default
-  database: db/development.sqlite3
+  url: postgresql://blogdb_takq_user:yBJGYAJE7s2GBTWP0BZJZVDfSgIjXPMh@dpg-ciie69d9aq012eqshj2g-a/blogdb_takq
+  # <<: *default
+  # database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
